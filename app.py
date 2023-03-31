@@ -24,9 +24,13 @@ def preprocess_review(review):
     # Add your preprocessing steps here (e.g., remove stop words, punctuation, etc.)
     return review
 
+# Load the Amazon product review dataset
+file_path = os.path.abspath('sentiment_with_results.csv')
+data = pd.read_csv(file_path)
+
 
 # Define the layout of the Streamlit app
-st.title('Amazon Product Review Sentiment Analysis')
+st.title('Sentiment Analysis on Amazon Product Review')
 review = st.text_input('Enter a Review')
 if st.button('Analyze'):
     sentiment = predict_sentiment(review)
@@ -40,11 +44,6 @@ if st.button('Analyze'):
     st.pyplot(fig)
     sentiment_pie = sentiment_counts.plot.pie(title='Sentiment Distribution')
     st.pyplot(sentiment_pie)
-
-# Load the Amazon product review dataset
-file_path = os.path.abspath('sentiment_with_results.csv')
-data = pd.read_csv(file_path)
-
 
 # Sidebar filters
 st.sidebar.title("Filters")
