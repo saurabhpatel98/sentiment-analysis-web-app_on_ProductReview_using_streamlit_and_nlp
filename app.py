@@ -26,7 +26,7 @@ def preprocess_review(review):
 
 
 # Define the layout of the Streamlit app
-st.title('Amazon Product Review Sentiment Analysis')
+st.title('Sentiment Analysis on Amazon Product Review')
 review = st.text_input('Enter a Review')
 if st.button('Analyze'):
     sentiment = predict_sentiment(review)
