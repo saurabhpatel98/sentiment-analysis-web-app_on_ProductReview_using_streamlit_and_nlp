@@ -1,10 +1,10 @@
 import joblib
-import pickle
 import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 import os
 import plotly.express as px
+
 # Load the pre-trained model from a .pkl file
 file_path = os.path.abspath('sentiment_model.pkl')
 model = joblib.load(file_path)
@@ -25,10 +25,10 @@ def preprocess_review(review):
     # Add your preprocessing steps here (e.g., remove stop words, punctuation, etc.)
     return review
 
+
 # Load the Amazon product review dataset
 file_path = os.path.abspath('sentiment_with_results.csv')
 data = pd.read_csv(file_path)
-
 
 # Define the layout of the Streamlit app
 st.title('Sentiment Analysis on Amazon Product Review')
@@ -65,7 +65,6 @@ else:
 if results:
     filtered_data = filtered_data[filtered_data['result'].isin(results)]
 
-
 # Show filtered data
 if not filtered_data.empty:
     st.title("Filtered Data")
@@ -73,7 +72,6 @@ if not filtered_data.empty:
     st.write(filtered_data[columns_to_show])
 else:
     st.warning("No data available with selected filters.")
-
 
 # KPIs
 total_reviews = filtered_data.shape[0]
@@ -104,9 +102,10 @@ if not filtered_data.empty:
 
     elif chart_type == "Bar Chart":
         if len(products) == 1:
-            fig = px.bar(filtered_data, x='Company', y='Rating', color='result', barmode='group', title='Sentiment by Company')
+            fig = px.bar(filtered_data, x='Company', y='Rating', color='result', barmode='group',
+                         title='Sentiment by Company')
             st.plotly_chart(fig)
         else:
-            fig = px.bar(filtered_data, x='Product', y='Rating', color='result', barmode='group', title='Sentiment by Product')
+            fig = px.bar(filtered_data, x='Product', y='Rating', color='result', barmode='group',
+                         title='Sentiment by Product')
             st.plotly_chart(fig)
-
