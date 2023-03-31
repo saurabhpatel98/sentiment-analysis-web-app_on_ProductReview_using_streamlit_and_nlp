@@ -1,19 +1,14 @@
-# Build + Deploy a Sentiment Analysis Model to classify Amazon Alexa Reviews into Positive & Negative
-An end-to-end toolkit on building a sentiment prediction model with a Jupyer notebook and deploying model pickle on local machine using flask. Our use case here is review classification of Amazon Alexa customer feedbacks into positive and negative. Dataset source is [here](https://www.kaggle.com/sid321axn/amazon-alexa-reviews).
+Sentiment Analysis Dashboard on Amazon Product reviews using streamlit and NLP This project provides an interactive dashboard for performing sentiment analysis on product and company reviews. The dashboard is built using Python and Streamlit, and allows users to filter and visualize reviews from a dataset of customer reviews for various products and companies.
 
-## YouTube Tutorial on this Project
-[![YouTube Tutorial](https://img.youtube.com/vi/lKAdxN0qrgk/0.jpg)](https://www.youtube.com/watch?v=lKAdxN0qrgk)
+The dashboard offers three filters: by company, by product, and by sentiment result. Users can select multiple companies and products to filter the reviews, and can see the filtered data in a table view. The sentiment analysis results are displayed in a pie chart or a bar chart, depending on user preference. The dashboard also provides some key performance indicators (KPIs) such as the total number of reviews, the number and percentage of positive and negative reviews, and the average rating.
 
-## How the model works!
-![](https://github.com/skillcate/sentiment_analysis_with_sklearn_pipeline/blob/main/readme/model-functionality.gif)
+The code uses a machine learning model based on Natural Language Processing (NLP) techniques to perform sentiment analysis on the reviews. The model was trained on a dataset of product reviews using Python's Scikit-learn library. The resulting model is then used to classify the reviews as positive or negative.
 
-## Steps to run on Windows
+The dashboard is deployed on Heroku, a cloud platform that allows users to deploy, manage, and scale applications. The source code is available on GitHub, along with the dataset used for training the sentiment analysis model.
 
-* Prerequisites: [Python 3.9](https://www.python.org/downloads/) (ensure Python is added to [PATH](https://medium.com/co-learning-lounge/how-to-download-install-python-on-windows-2021-44a707994013)) + [Git](https://www.markdownguide.org/basic-syntax/) Client
-* Open GIT CMD >> navigate to working directory >> Clone this Github Repo
+Overall, this project provides an easy-to-use and interactive way to analyze customer sentiment towards products and companies. The dashboard can be useful for companies to monitor their online reputation, identify areas for improvement, and make data-driven decisions based on customer feedback.
 
-      git clone https://github.com/skillcate/sentiment_analysis_with_sklearn_pipeline.git  
-* Open Windows Powershell >> navigate to new working directory (cloned repo folder)
+
 * Create a virtual environment
   * install virtual environment
  
@@ -72,5 +67,3 @@ An end-to-end toolkit on building a sentiment prediction model with a Jupyer not
 * To close >> Go back to Terminal & type `ctrl+c` >> Deactivate Virtual Environment ENV
 
       deactivate
-# sentiment-analysis-web-app_on_ProductReview_using_streamlit_and_nlp
-# sentiment-analysis-web-app_on_ProductReview_using_streamlit_and_nlp
