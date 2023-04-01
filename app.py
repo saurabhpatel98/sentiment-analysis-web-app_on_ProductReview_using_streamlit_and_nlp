@@ -8,7 +8,8 @@ from wordcloud import WordCloud, STOPWORDS
 import io
 
 # Load the pre-trained model from a .pkl file
-model = joblib.load('sentiment_model.pkl')
+file_path = os.path.abspath('sentiment_model.pkl')
+model = joblib.load(file_path)
 
 
 # Define a function to perform sentiment analysis on a given review text
