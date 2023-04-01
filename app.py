@@ -4,6 +4,8 @@ import pandas as pd
 import streamlit as st
 import os
 import plotly.express as px
+from wordcloud import WordCloud, STOPWORDS
+import io
 
 # Load the pre-trained model from a .pkl file
 file_path = os.path.abspath('sentiment_model.pkl')
@@ -43,8 +45,10 @@ if st.button('Analyze'):
     ax.set_xlabel('Sentiment')
     ax.set_ylabel('Count')
     st.pyplot(fig)
-    sentiment_pie = sentiment_counts.plot.pie(title='Sentiment Distribution')
-    st.pyplot(sentiment_pie)
+    # sentiment_pie = sentiment_counts.plot.pie(title='Sentiment Distribution')
+    # fig = sentiment_pie.get_figure()
+    # fig.savefig("sentiment_pie.png")
+    # st.image("sentiment_pie.png")
 
 # Sidebar filters
 st.sidebar.title("Filters")
@@ -90,6 +94,24 @@ st.title("Key Performance Indicators")
 st.write(f"Total Reviews: **{total_reviews}**")
 st.write(f"Positive Reviews: **{positive_reviews}** ({positive_percentage}%)")
 st.write(f"Negative Reviews: **{negative_reviews}** ({negative_percentage}%)")
+# Create a string of all the reviews
+all_reviews = ' '.join(filtered_data['Review'])
+
+# Generate the word cloud
+st.title("WorldCloud")
+wordcloud = WordCloud(width=800, height=400).generate(all_reviews)
+
+# Display the word cloud
+fig, ax = plt.subplots(figsize=(16, 8))
+ax.imshow(wordcloud, interpolation='bilinear')
+ax.axis('off')
+
+# Save the figure to a BytesIO object and display it in Streamlit
+
+buf = io.BytesIO()
+fig.savefig(buf, format='png')
+buf.seek(0)
+st.image(buf)
 
 # Visualization
 if not filtered_data.empty:
@@ -109,3 +131,5 @@ if not filtered_data.empty:
             fig = px.bar(filtered_data, x='Product', y='Rating', color='result', barmode='group',
                          title='Sentiment by Product')
             st.plotly_chart(fig)
+
+
