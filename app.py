@@ -131,5 +131,3 @@ if not filtered_data.empty:
             fig = px.bar(filtered_data, x='Product', y='Rating', color='result', barmode='group',
                          title='Sentiment by Product')
             st.plotly_chart(fig)
-
-
