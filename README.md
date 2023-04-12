@@ -42,7 +42,7 @@ Overall, this project provides an easy-to-use and interactive way to analyze cus
 * Prerequisites: [Python 3.9](https://www.python.org/downloads/)
 * Open Terminal >> navigate to working directory >> Clone this Github Repo
 
-      git clone https://github.com/skillcate/sentiment_analysis_with_sklearn_pipeline.git  
+      git clone https://github.com/saurabhpatel98/sentiment-analysis-web-app_on_ProductReview_using_streamlit_and_nlp.git  
 * Navigate to new working directory (cloned repo folder)
 * Create a virtual environment
   * install virtual environment
@@ -67,3 +67,12 @@ Overall, this project provides an easy-to-use and interactive way to analyze cus
 * To close >> Go back to Terminal & type `ctrl+c` >> Deactivate Virtual Environment ENV
 
       deactivate
+      
+      
+![Filtered_data](https://user-images.githubusercontent.com/26132974/231563817-e8edacac-331f-411d-a5df-ae225941a914.png)
+![result](https://user-images.githubusercontent.com/26132974/231563901-f963a9d1-7ea4-48ce-a37f-d1dd40a29d94.png)
+![Main Page](https://user-images.githubusercontent.com/26132974/231563905-8995483d-c76f-4641-8b94-8a497bd5b938.png)
+
+
+      
+
